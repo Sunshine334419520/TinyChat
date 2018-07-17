@@ -1,0 +1,3 @@
+/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles/TinyChatServer.dir
