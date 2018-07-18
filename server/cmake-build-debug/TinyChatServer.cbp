@@ -84,10 +84,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/macor.h">
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/exception/resource_exception.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/thread/base_task.cc">
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/macor.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
 		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/thread/base_task.h">
@@ -115,6 +115,9 @@
 			<Option target="TinyChatServer"/>
 		</Unit>
 		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/thread/tiny_chat_thread.h">
+			<Option target="TinyChatServer"/>
+		</Unit>
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/tiny_chat_main.cc">
 			<Option target="TinyChatServer"/>
 		</Unit>
 		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/CMakeLists.txt">

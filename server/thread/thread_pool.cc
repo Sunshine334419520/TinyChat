@@ -3,3 +3,7 @@
 //
 
 #include "thread_pool.h"
+
+namespace thread {
+
+}

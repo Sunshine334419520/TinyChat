@@ -15,20 +15,46 @@ TinyChatThread::TinyChatThread(const std::string &name,
     : Thread(name), task_(nullptr), id_(id) {}
 
 TinyChatThread::TinyChatThread(const std::string &name,
-                               BaseTask* task,
+                               std::shared_ptr<BaseTask> task,
+                               std::shared_ptr<void> task_data,
                                TinyChatThread::ThreadID id)
     : Thread(name),
       task_(task),
+      task_data_(task_data),
       id_(id) {}
 
 void TinyChatThread::Run() {
 
-    while (task_ == nullptr)
+    while (task_ == nullptr && state() == IDLE)
         task_cond_.Wait();
 
+    // 设置state为 exit， 即可终止IDLE进程
+    if (state() == EXIT)
+        this->Terminate();
+
     set_state(RUNNING);
-    task_->Execute(task_data_);
+    task_->Execute(task_data_.get());
+
+    set_task(nullptr, nullptr);
+    set_state(IDLE);
+
+
+
+    //DefaultThreadPool::MoveToIdleQueue(this);
 }
+
+
+void TinyChatThread::set_task(std::shared_ptr<BaseTask> task,
+                              std::shared_ptr<void> task_data) {
+
+    task_mutex_.mutex_lock();
+    task_ = task;
+    task_data_ = task_data;
+
+    task_mutex_.mutex_unlock();
+    task_cond_.Signal();
+}
+
 
 
 

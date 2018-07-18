@@ -3,7 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/TinyChatServer.dir/thread/thread_pool.cc.o"
   "CMakeFiles/TinyChatServer.dir/thread/lock.cc.o"
   "CMakeFiles/TinyChatServer.dir/thread/tiny_chat_thread.cc.o"
-  "CMakeFiles/TinyChatServer.dir/thread/base_task.cc.o"
+  "CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.o"
   "TinyChatServer.pdb"
   "TinyChatServer"
 )

@@ -10,7 +10,10 @@
 
 #include <string>
 
-#include "lock.h"
+#include "thread/lock.h"
+#include "macor.h"
+#include "base_task.h"
+
 
 namespace thread {
 
@@ -32,26 +35,28 @@ class TinyChatThread : public Thread{
                             ThreadID id = DEFAULT_THREAD);
 
     explicit TinyChatThread(const std::string& name,
-                            BaseTask* task,
+                            std::shared_ptr<BaseTask> task,
+                            std::shared_ptr<void> task_data,
                             ThreadID id = DEFAULT_THREAD);
-    ~TinyChatThread();
+    ~TinyChatThread() = default;
 
     // Thread method.
-    void Run() override;
+    void Run() OVERRIDE;
 
-    void set_task(BaseTask* task, void* task_data);
-    BaseTask* task() const { return task_; }
+    void set_task(std::shared_ptr<BaseTask> task, std::shared_ptr<void> task_data);
+    BaseTask* task() const { return task_.get(); }
+    void* task_data() const { return task_data_.get(); }
 
     ThreadID  id() const { return id_; }
     void set_id(ThreadID id) { id_ = id; }
 
  protected:
     lock::ConditionVariable task_cond_;
-    lock::Mutex  work_mutex_;
+    lock::Mutex  task_mutex_;
  private:
 
-    BaseTask* task_;            // 任务
-    void* task_data_;           // 任务数据
+    std::shared_ptr<BaseTask> task_;            // 任务
+    std::shared_ptr<void> task_data_;           // 任务数据
     ThreadID id_;               // 线程的类型
 };
 

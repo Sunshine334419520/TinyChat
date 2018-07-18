@@ -123,33 +123,6 @@ TinyChatServer/fast:
 	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/build
 .PHONY : TinyChatServer/fast
 
-thread/base_task.o: thread/base_task.cc.o
-
-.PHONY : thread/base_task.o
-
-# target to build an object file
-thread/base_task.cc.o:
-	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/thread/base_task.cc.o
-.PHONY : thread/base_task.cc.o
-
-thread/base_task.i: thread/base_task.cc.i
-
-.PHONY : thread/base_task.i
-
-# target to preprocess a source file
-thread/base_task.cc.i:
-	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/thread/base_task.cc.i
-.PHONY : thread/base_task.cc.i
-
-thread/base_task.s: thread/base_task.cc.s
-
-.PHONY : thread/base_task.s
-
-# target to generate assembly for a file
-thread/base_task.cc.s:
-	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/thread/base_task.cc.s
-.PHONY : thread/base_task.cc.s
-
 thread/lock.o: thread/lock.cc.o
 
 .PHONY : thread/lock.o
@@ -258,6 +231,33 @@ thread/tiny_chat_thread.cc.s:
 	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/thread/tiny_chat_thread.cc.s
 .PHONY : thread/tiny_chat_thread.cc.s
 
+tiny_chat_main.o: tiny_chat_main.cc.o
+
+.PHONY : tiny_chat_main.o
+
+# target to build an object file
+tiny_chat_main.cc.o:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.o
+.PHONY : tiny_chat_main.cc.o
+
+tiny_chat_main.i: tiny_chat_main.cc.i
+
+.PHONY : tiny_chat_main.i
+
+# target to preprocess a source file
+tiny_chat_main.cc.i:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.i
+.PHONY : tiny_chat_main.cc.i
+
+tiny_chat_main.s: tiny_chat_main.cc.s
+
+.PHONY : tiny_chat_main.s
+
+# target to generate assembly for a file
+tiny_chat_main.cc.s:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.s
+.PHONY : tiny_chat_main.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -267,9 +267,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... TinyChatServer"
-	@echo "... thread/base_task.o"
-	@echo "... thread/base_task.i"
-	@echo "... thread/base_task.s"
 	@echo "... thread/lock.o"
 	@echo "... thread/lock.i"
 	@echo "... thread/lock.s"
@@ -282,6 +279,9 @@ help:
 	@echo "... thread/tiny_chat_thread.o"
 	@echo "... thread/tiny_chat_thread.i"
 	@echo "... thread/tiny_chat_thread.s"
+	@echo "... tiny_chat_main.o"
+	@echo "... tiny_chat_main.i"
+	@echo "... tiny_chat_main.s"
 .PHONY : help
 
 

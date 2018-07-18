@@ -7,29 +7,55 @@
 #include <cassert>
 #include <sched.h>
 
+#include "thread_pool.h"
 
 namespace thread {
 
+/*
+namespace {
 
-Thread::Thread(const std::string& name)
+Thread* g_Instance = nullptr;
+
+}
+ */
+
+/*
+Thread *Thread::GetInstance() {
+
+    assert(g_Instance);
+    return g_Instance;
+
+}
+ */
+
+Thread::Thread(const std::string& name) noexcept
     : name_(name),
       state_(NOCREATE),
       is_detach_(false),
       is_create_suspended_(false),
       priority_(-1) {
-
+    /*
+    assert(!g_Instance);
+    g_Instance = this;
+     */
 }
 
 
 Thread::~Thread() {
-
+    /*
+    assert(g_Instance);
+    g_Instance = nullptr;
+     */
 }
 
 void Thread::Terminate() {
-    pthread_exit(NULL);
+    pthread_exit(nullptr);
 }
 
 bool Thread::Start() {
+    // 设置线程为空闲线程
+    state_ = IDLE;
+
     pthread_attr_t attr;
     sched_param param;
 
@@ -59,9 +85,17 @@ bool Thread::WakeUp() {
 void *Thread::ThreadFunction(void * arg) {
     Thread* p_thread = (Thread*)(arg);
 
-    p_thread->Run();
+    for (;;) {
+
+        p_thread->Run();
+        DefaultThreadPool::MoveToIdleQueue(static_cast<TinyChatThread*>(p_thread));
+
+    }
+
     return nullptr;
 }
+
+
 
 
 } // namespace thread

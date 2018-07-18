@@ -12,9 +12,17 @@ namespace thread {
 class BaseTask {
  public:
     BaseTask() noexcept = default;
-    virtual ~BaseTask() = default;
+    virtual ~BaseTask() {}
 
     virtual void Execute(void* ptr) = 0;
+};
+
+class XTask : public BaseTask {
+ public:
+    XTask() = default;
+    void Execute(void* ptr) OVERRIDE {
+        printf("The Job comes from XTask\n");
+    }
 };
 
 }

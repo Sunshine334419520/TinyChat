@@ -15,6 +15,7 @@ namespace thread {
 class Thread {
  public:
 
+    //static Thread* GetInstance();
 
     // 线程的四种状态，空闲 忙碌 挂起 终止
     enum ThreadState {
@@ -62,7 +63,7 @@ class Thread {
     }
     bool Join() {
         if (is_detach_) return false;
-        pthread_join(handle_, nullptr);
+        return pthread_join(handle_, nullptr) == 0;
     }                // Default behavior of the thread.
 
  protected:

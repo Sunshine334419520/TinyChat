@@ -15,6 +15,6 @@ include_directories(../server)
 set(SRC thread/thread.h
         thread/thread.cc
         thread/thread_pool.h
-        thread/thread_pool.cc macor.h thread/lock.cc thread/lock.h thread/tiny_chat_thread.cc thread/tiny_chat_thread.h thread/base_task.h)
+        thread/thread_pool.cc macor.h thread/lock.cc thread/lock.h thread/tiny_chat_thread.cc thread/tiny_chat_thread.h thread/base_task.h exception/resource_exception.h tiny_chat_main.cc)
 #利用SRC生成一个可执行文件
 add_executable(${PROJECT_NAME} ${SRC})

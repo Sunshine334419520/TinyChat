@@ -5,6 +5,13 @@
 #ifndef TINYCHATSERVER_MACOR_H
 #define TINYCHATSERVER_MACOR_H
 
+#if !defined(OVERRIDE)
+
+#define OVERRIDE override
+
+#endif
+
+
 #if !defined(DISALLOW_COPY_ASSIGNMENT)
 
 #define DISALLOW_COPY_ASSIGNMENT(Class_Name) \
