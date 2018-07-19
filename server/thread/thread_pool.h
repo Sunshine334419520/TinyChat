@@ -28,6 +28,8 @@ const std::size_t kDefaultIdleThMaxOfNum = 256;
 
 }
 
+
+
 class TinyChatThread;
 class BaseTask;
 
@@ -37,15 +39,17 @@ class BaseTask;
 // for example : ThreadPool<WorkThread, 30> or ThreadPool<WorkThread>
 template <class ThreadType, std::size_t num_of_init = 20>
 class ThreadPool final {
-    friend class Thread;
+    friend class TinyChatThread;
  public:
     typedef std::list<std::shared_ptr<ThreadType>> ThreadQueue;
     //typedef std::list<std::shared_ptr<ThreadType>> ThreadQueue;
 
  public:
     // 从线程池中取出一个线程，如果线程达到最大值,抛出异常
-    static void AllocateOneThread(std::shared_ptr<BaseTask> task,
-                                  std::shared_ptr<void> data);
+    static std::shared_ptr<ThreadType>
+            AllocateOneThread(const ThreadInfo& info,
+                              std::shared_ptr<BaseTask> task,
+                              std::shared_ptr<void> data);
 
     // 结束所有的线程
     static void TerminateAll();
@@ -77,7 +81,7 @@ class ThreadPool final {
     // 将空闲线程移动到忙碌线程
     static void MoveToBusyQueue(const std::shared_ptr<ThreadType>& );
     // 将忙碌线程移动到空闲线程
-    static void MoveToIdleQueue(ThreadType*);
+    static void MoveToIdleQueue(const std::shared_ptr<ThreadType>& );
 
     // 在idle thread 不够到时候调用此函数
     static void NotIdleThread();
@@ -179,8 +183,9 @@ template <class ThreadType, size_t num_of_init>
 lock::ConditionVariable ThreadPool<ThreadType, num_of_init>::idle_cond_;
 
 template<class ThreadType, size_t num_of_init>
-void
-ThreadPool<ThreadType, num_of_init>::AllocateOneThread(std::shared_ptr<BaseTask> task,
+std::shared_ptr<ThreadType>
+ThreadPool<ThreadType, num_of_init>::AllocateOneThread(const ThreadInfo& info,
+                                                       std::shared_ptr<BaseTask> task,
                                                        std::shared_ptr<void> data) {
     // 第一次启动时需要跟线程池分配初始化线程.
     if (is_first_use_) {
@@ -205,16 +210,23 @@ ThreadPool<ThreadType, num_of_init>::AllocateOneThread(std::shared_ptr<BaseTask>
 
     auto new_thread = thread_idle_queue_.front();
 
+
+    new_thread->set_id(info.id);
+    new_thread->set_name(info.name);
     new_thread->set_task(task, data);
 
     MoveToBusyQueue(new_thread);
 
-    //return new_thread;
+    return new_thread;
 
 }
 
 template<class ThreadType, size_t num_of_init>
 void ThreadPool<ThreadType, num_of_init>::TerminateAll() {
+    if (!thread_busy_queue_.empty()) {
+        throw mistake::terminate_exception();
+    }
+
     RemoveIdleThread(thread_idle_queue_.size());
 }
 
@@ -256,12 +268,11 @@ void ThreadPool<ThreadType, num_of_init>::MoveToBusyQueue(
 
 template<class ThreadType, size_t num_of_init>
 void ThreadPool<ThreadType, num_of_init>::MoveToIdleQueue(
-        //const std::shared_ptr<ThreadType> &need_move_thread) {
-        ThreadType* need_move_thread) {
+        const std::shared_ptr<ThreadType> &need_move_thread) {
+        //ThreadType* need_move_thread) {
     // 参考MoveToBusyQueue
-    std::shared_ptr<ThreadType> need_thread(need_move_thread);
     idle_mutex_.mutex_lock();
-    thread_idle_queue_.push_back(need_thread);
+    thread_idle_queue_.push_back(need_move_thread);
     idle_mutex_.mutex_unlock();
 
 
@@ -272,8 +283,10 @@ void ThreadPool<ThreadType, num_of_init>::MoveToIdleQueue(
             thread_busy_queue_.begin();
 
     for ( ; it != thread_busy_queue_.end(); ++it) {
-        if ((*it).get() == need_move_thread)
+        if (*it == need_move_thread) {
             thread_busy_queue_.erase(it);
+            break;
+        }
     }
 
     busy_mutex_.mutex_unlock();
@@ -309,7 +322,6 @@ void ThreadPool<ThreadType, num_of_init>::RemoveIdleThread(int num) {
             thread_idle_queue_.begin();
 
     for ( ; it != thread_idle_queue_.end() && num > 0; ++it, --num) {
-        //it->set_state(Thread::EXIT);
         (*it)->set_state(Thread::EXIT);
         thread_idle_queue_.erase(it);
 

@@ -4,9 +4,11 @@
 
 #include "thread/tiny_chat_thread.h"
 
+#include <iostream>
 
 #include "thread/base_task.h"
 #include "thread_pool.h"
+
 
 namespace thread {
 
@@ -25,22 +27,27 @@ TinyChatThread::TinyChatThread(const std::string &name,
 
 void TinyChatThread::Run() {
 
-    while (task_ == nullptr && state() == IDLE)
-        task_cond_.Wait();
+    std::shared_ptr<TinyChatThread> copy_this(this);
 
-    // 设置state为 exit， 即可终止IDLE进程
-    if (state() == EXIT)
-        this->Terminate();
+    for (;;) {
 
-    set_state(RUNNING);
-    task_->Execute(task_data_.get());
+        while (task_ == nullptr  && state() == IDLE)
+            task_cond_.Wait();
 
-    set_task(nullptr, nullptr);
-    set_state(IDLE);
+        // 设置state为 exit， 即可终止IDLE进程
+        if (state() == EXIT)
+            this->Terminate();
+
+        set_state(RUNNING);
+        task_->Execute(task_data_.get());
+        //std::cout << name() << std::endl;
+        //std::cout << std::endl;
+        set_task(nullptr, nullptr);
+        set_state(IDLE);
 
 
-
-    //DefaultThreadPool::MoveToIdleQueue(this);
+        DefaultThreadPool::MoveToIdleQueue(copy_this);
+    }
 }
 
 

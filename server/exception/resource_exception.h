@@ -16,6 +16,13 @@ class resource_exception : std::exception {
     }
 };
 
+class terminate_exception : std::exception {
+ public:
+    const char *what() const noexcept {
+        return "Error! you still have unfinished threads. ";
+    }
+};
+
 }   // namespace mistake
 
 #endif //TINYCHATSERVER_RESOURCEEXCEPTION_H

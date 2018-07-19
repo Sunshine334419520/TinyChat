@@ -13,6 +13,10 @@ exception
 ../../server/macor.h
 
 ../../server/thread/base_task.h
+unistd.h
+-
+iostream
+-
 
 ../../server/thread/lock.h
 pthread.h
@@ -37,6 +41,10 @@ base_task.h
 ../../server/thread/base_task.h
 
 /Users/sunshine/Code/C++/TinyChat/server/thread/base_task.h
+unistd.h
+-
+iostream
+-
 
 /Users/sunshine/Code/C++/TinyChat/server/thread/lock.cc
 lock.h
@@ -89,6 +97,8 @@ exception/resource_exception.h
 /Users/sunshine/Code/C++/TinyChat/server/thread/tiny_chat_thread.cc
 thread/tiny_chat_thread.h
 /Users/sunshine/Code/C++/TinyChat/server/thread/thread/tiny_chat_thread.h
+iostream
+-
 thread/base_task.h
 /Users/sunshine/Code/C++/TinyChat/server/thread/thread/base_task.h
 thread_pool.h

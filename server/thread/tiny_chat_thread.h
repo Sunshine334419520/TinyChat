@@ -19,6 +19,8 @@ namespace thread {
 
 class BaseTask;
 
+
+
 class TinyChatThread : public Thread{
  public:
 
@@ -58,6 +60,12 @@ class TinyChatThread : public Thread{
     std::shared_ptr<BaseTask> task_;            // 任务
     std::shared_ptr<void> task_data_;           // 任务数据
     ThreadID id_;               // 线程的类型
+};
+
+struct ThreadInfo {
+    TinyChatThread::ThreadID id;
+    std::string              name;
+
 };
 
 }   // namespace thread

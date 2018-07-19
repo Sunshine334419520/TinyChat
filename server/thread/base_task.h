@@ -5,6 +5,9 @@
 #ifndef TINYCHATSERVER_BASE_TASK_H
 #define TINYCHATSERVER_BASE_TASK_H
 
+#include <unistd.h>
+#include <iostream>
+
 namespace thread {
 
 // 这是一个人物抽象类，继承它来，并且重写Execute method
@@ -22,6 +25,8 @@ class XTask : public BaseTask {
     XTask() = default;
     void Execute(void* ptr) OVERRIDE {
         printf("The Job comes from XTask\n");
+        //std::cout << "The Job comes from XTask" << std::endl;
+        sleep(5);
     }
 };
 

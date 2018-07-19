@@ -83,14 +83,10 @@ bool Thread::WakeUp() {
 }
 
 void *Thread::ThreadFunction(void * arg) {
-    Thread* p_thread = (Thread*)(arg);
+    //std::shared_ptr<Thread> p_thread((Thread*)(arg));
+    Thread* p_thread = (Thread*)arg;
 
-    for (;;) {
-
-        p_thread->Run();
-        DefaultThreadPool::MoveToIdleQueue(static_cast<TinyChatThread*>(p_thread));
-
-    }
+    p_thread->Run();
 
     return nullptr;
 }
