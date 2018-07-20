@@ -16,7 +16,7 @@ class ThreadQueue;
 #include "thread/lock.h"
 #include "thread/base_task.h"
 #include "thread/tiny_chat_thread.h"
-#include "exception/resource_exception.h"
+#include "exception/tiny_chat_exception.h"
 
 namespace thread {
 

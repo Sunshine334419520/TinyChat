@@ -4,6 +4,8 @@
 
 #include "macor.h"
 
+
+
 #if defined(OS_WIN)
 
  #include <winsock2.h>
@@ -18,7 +20,7 @@
 
 #endif
 
-#if defined(POSIX)
+#if defined(OS_POSIX)
 
  #include <netinet/in.h>
  #include <sys/socket.h>
@@ -61,14 +63,14 @@ struct SockInfo {
 
 class ServerSocket final {
  public:
-    ServerSocket();
+    ServerSocket()noexcept;
 
     static ServerSocket* Create(); 
-    bool Listen(const SockInfo& sock_info);
-    SOcket Accept();
+    void Listen();
+    Socket Accept();
 
     // 必须用这个函数
-    static void Destroy() noexcept;
+    void Destroy() noexcept;
     
  private:
     Socket listen_fd_;      // listen socket
@@ -79,6 +81,5 @@ class ServerSocket final {
 
 
 }   // namespace network
-
 
 #endif

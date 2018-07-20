@@ -7,29 +7,35 @@
 
 // 各个平台宏定义
 
-#if !defined(OS_MACOS)
-
-#define OS_MACOS __APPLE__ 
-
-#endif
-
-
-#if !defined(OS_LINUX)
-
-#define OS_LINUX __linux
-
-#endif
-
-#if !defined(OS_WIN)
-
-#define OS_WIN _WIN32
+#if defined(__native_client__)
+#define OS_NACL 1
+#elif defined(__APPLE__)
+#define OS_MACOSX 1
+#elif defined(__linux__)
+#define OS_LINUX 1
+#include <unistd.h>
+#elif defined(_WIN32)
+#define OS_WIN 1
+#elif defined(__FreeBSD__)
+#define OS_FREEBSD
+#elif defined(__OpenBSD__)
+#define OS_OPENBSD
 
 #endif
 
-#if !defined(POSIX)
 
-#define POSIX __posix
+#if defined(OS_MACOSX) || defined(OS_LINUX) ||  \
+    defined(OS_FREEBSD) || defined(OS_OPENBSD)
+#define OS_POSIX 1
+#endif
 
+#if defined(__GUNC__)
+#define COMPILER_GCC 1
+#elif defined(_MSC_VER)
+#define COMPILER_MSVC 1
+#else
+#error Please add support for you compiler in macor.h
+#endif
 
 
 

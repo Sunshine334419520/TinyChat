@@ -84,10 +84,28 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/exception/resource_exception.h">
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/exception/tiny_chat_exception.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
 		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/macor.h">
+			<Option target="TinyChatServer"/>
+		</Unit>
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/client_socket.cc">
+			<Option target="TinyChatServer"/>
+		</Unit>
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/client_socket.h">
+			<Option target="TinyChatServer"/>
+		</Unit>
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/epool_server.cc">
+			<Option target="TinyChatServer"/>
+		</Unit>
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/epool_server.h">
+			<Option target="TinyChatServer"/>
+		</Unit>
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/server_socket.cc">
+			<Option target="TinyChatServer"/>
+		</Unit>
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/server_socket.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
 		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/thread/base_task.h">

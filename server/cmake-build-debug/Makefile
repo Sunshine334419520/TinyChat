@@ -123,6 +123,87 @@ TinyChatServer/fast:
 	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/build
 .PHONY : TinyChatServer/fast
 
+network/client_socket.o: network/client_socket.cc.o
+
+.PHONY : network/client_socket.o
+
+# target to build an object file
+network/client_socket.cc.o:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/client_socket.cc.o
+.PHONY : network/client_socket.cc.o
+
+network/client_socket.i: network/client_socket.cc.i
+
+.PHONY : network/client_socket.i
+
+# target to preprocess a source file
+network/client_socket.cc.i:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/client_socket.cc.i
+.PHONY : network/client_socket.cc.i
+
+network/client_socket.s: network/client_socket.cc.s
+
+.PHONY : network/client_socket.s
+
+# target to generate assembly for a file
+network/client_socket.cc.s:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/client_socket.cc.s
+.PHONY : network/client_socket.cc.s
+
+network/epool_server.o: network/epool_server.cc.o
+
+.PHONY : network/epool_server.o
+
+# target to build an object file
+network/epool_server.cc.o:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/epool_server.cc.o
+.PHONY : network/epool_server.cc.o
+
+network/epool_server.i: network/epool_server.cc.i
+
+.PHONY : network/epool_server.i
+
+# target to preprocess a source file
+network/epool_server.cc.i:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/epool_server.cc.i
+.PHONY : network/epool_server.cc.i
+
+network/epool_server.s: network/epool_server.cc.s
+
+.PHONY : network/epool_server.s
+
+# target to generate assembly for a file
+network/epool_server.cc.s:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/epool_server.cc.s
+.PHONY : network/epool_server.cc.s
+
+network/server_socket.o: network/server_socket.cc.o
+
+.PHONY : network/server_socket.o
+
+# target to build an object file
+network/server_socket.cc.o:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/server_socket.cc.o
+.PHONY : network/server_socket.cc.o
+
+network/server_socket.i: network/server_socket.cc.i
+
+.PHONY : network/server_socket.i
+
+# target to preprocess a source file
+network/server_socket.cc.i:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/server_socket.cc.i
+.PHONY : network/server_socket.cc.i
+
+network/server_socket.s: network/server_socket.cc.s
+
+.PHONY : network/server_socket.s
+
+# target to generate assembly for a file
+network/server_socket.cc.s:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/server_socket.cc.s
+.PHONY : network/server_socket.cc.s
+
 thread/lock.o: thread/lock.cc.o
 
 .PHONY : thread/lock.o
@@ -267,6 +348,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... TinyChatServer"
+	@echo "... network/client_socket.o"
+	@echo "... network/client_socket.i"
+	@echo "... network/client_socket.s"
+	@echo "... network/epool_server.o"
+	@echo "... network/epool_server.i"
+	@echo "... network/epool_server.s"
+	@echo "... network/server_socket.o"
+	@echo "... network/server_socket.i"
+	@echo "... network/server_socket.s"
 	@echo "... thread/lock.o"
 	@echo "... thread/lock.i"
 	@echo "... thread/lock.s"

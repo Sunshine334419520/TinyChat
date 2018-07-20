@@ -11,8 +11,9 @@ add_definitions(-std=c++11)
 
 include_directories(../server)
 
-set(EXCEPTION_SRC exception/resource_exception.h
-                  exception/resource_exception.cc)
+set(EXCEPTION_SRC exception/tiny_chat_exception.h
+                  #exception/tiny_chat_exception.cc)
+                    )
 
 set(THREAD_SRC  thread/thread.h
                 thread/thread.cc
@@ -26,7 +27,11 @@ set(THREAD_SRC  thread/thread.h
                 )
 
 set(NETWORK_SRC network/server_socket.cc
-                network/server_socket.h)
+                network/server_socket.h
+                network/client_socket.cc
+                network/client_socket.h
+                network/epool_server.cc
+                network/epool_server.h)
 
 set(MACOR_SRC macor.h)
 
