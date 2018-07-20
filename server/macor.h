@@ -47,9 +47,9 @@
 #endif
 
 
-#if !defined(DISALLOW_COPY_ASSIGNMENT)
+#if !defined(DISALLOW_COPY_AND_ASSIGN)
 
-#define DISALLOW_COPY_ASSIGNMENT(Class_Name) \
+#define DISALLOW_COPY_AND_ASSIGN(Class_Name) \
  private:      \
  Class_Name(const Class_Name&);         \
  void operator=(const Class_Name&)
@@ -61,7 +61,7 @@
 #define DISALLOW_IMPLEMENT_AND_EXTEND(Class_Name) \
   Class_Name();         \
   ~Class_Name();            \
-  DISALLOW_COPY_ASSIGNMENT(Class_Name)
+  DISALLOW_COPY_AND_ASSIGN(Class_Name)
 
 #endif
 
@@ -71,7 +71,7 @@
  protected:              \
   Class_Name();          \
   ~Class_Name();           \
-  DISALLOW_COPY_ASSIGNMENT(Class_Name)
+  DISALLOW_COPY_AND_ASSIGN(Class_Name)
 
 #endif
 
