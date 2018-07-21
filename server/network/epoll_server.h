@@ -5,11 +5,12 @@
 #ifndef TINYCHATSERVER_EPOLL_SERVER_H
 #define TINYCHATSERVER_EPOLL_SERVER_H
 
-#include <fchtl.h>
+#include <fcntl.h>
 #include <sys/ioctl.h>
 #include <sys/epoll.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <assert.h>
 
 #include "macor.h"
 
@@ -18,9 +19,9 @@ namespace network {
 
 class EpollServer final {
  public:
-    EpoolServer(bool b_et = true);
+    explicit EpollServer(bool b_et = true);
 
-    ~EpoolServer();
+    ~EpollServer();
 
     // 创建epoll， max_connections是服务需要支持的最大连接数
     void Create(int max_connections);
@@ -32,17 +33,17 @@ class EpollServer final {
     void AppendMonitorHandle(int fd, long long data, __uint32_t event);
 
     // 修改监听事件, 参数如上一个函数一样
-    void ModifyMoniterHandle(int fd, long long data, __uint32_t event);
+    void ModifyMonitorHandle(int fd, long long data, __uint32_t event);
 
     // 删除正在监听的句柄
-    void RemoveMoniterHandle(int fd, long long data, __uint32_t event);
+    void RemoveMonitorHandle(int fd, long long data, __uint32_t event);
 
     // | millsencond | 需要等待的毫秒
     int Wait(int millsencond);
 
     struct epoll_event& get(int i) {
          assert(pervs_ != 0);
-         return perv_[i];
+         return pervs_[i];
      }
 
  private:

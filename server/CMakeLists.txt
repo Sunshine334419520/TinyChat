@@ -30,15 +30,15 @@ set(NETWORK_SRC network/server_socket.cc
                 network/server_socket.h
                 network/client_socket.cc
                 network/client_socket.h
-                network/epool_server.cc
-                network/epool_server.h)
+                network/epoll_server.cc
+                network/epoll_server.h)
 
 set(MACOR_SRC macor.h)
 
 set(MAIN_SRC tiny_chat_main.cc)
 
 
-set(ALL_SRC ${EXCEPTION_SRC} ${THREAD_SRC} ${NETWORK_SRC} ${MACOR_SRC} ${MAIN_SRC})
+set(ALL_SRC ${EXCEPTION_SRC} ${THREAD_SRC} ${NETWORK_SRC} ${MACOR_SRC} ${MAIN_SRC} message/message.h)
 
 
 #利用SRC生成一个可执行文件

@@ -1,0 +1,8 @@
+//
+// Created by Sunshine on 2018/7/21.
+//
+
+#ifndef TINYCHATSERVER_MESSAGE_H
+#define TINYCHATSERVER_MESSAGE_H
+
+#endif //TINYCHATSERVER_MESSAGE_H

@@ -90,16 +90,19 @@
 		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/macor.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/message/message.h">
+			<Option target="TinyChatServer"/>
+		</Unit>
 		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/client_socket.cc">
 			<Option target="TinyChatServer"/>
 		</Unit>
 		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/client_socket.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/epool_server.cc">
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/epoll_server.cc">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/epool_server.h">
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/epoll_server.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
 		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/server_socket.cc">

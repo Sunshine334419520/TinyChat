@@ -10,11 +10,11 @@ namespace network {
 EpollServer::EpollServer(bool et)
     : epoll_fd_(-1),
       pervs_(nullptr),
-      et_(et),
+      is_et_(et),
       max_connections_(1024){}
 
 EpollServer::~EpollServer() {
-    delete []_pervs;
+    delete []pervs_;
 
     if (epoll_fd_ > 0)
         close(epoll_fd_);
@@ -24,8 +24,8 @@ void EpollServer::Ctrl(int fd, long long data, __uint32_t events, int op) {
     struct epoll_event ev;
     ev.data.u64 = data;
 
-    if (et_) {
-        ev.events = evnets } EPOLLET;
+    if (is_et_) {
+        ev.events = evnets | EPOLLET;
     }
     else {
         ev.events = events;
@@ -33,6 +33,7 @@ void EpollServer::Ctrl(int fd, long long data, __uint32_t events, int op) {
     
     epoll_ctl(epoll_fd_, op, fd, &ev);
 }
+
 
 void EpollServer::Create(int max_connections)
 {
@@ -43,7 +44,7 @@ void EpollServer::Create(int max_connections)
     if (pervs_ != nullptr)
         delete [] pervs_;
 
-    _pervs = new epoll_event[max_connections + 1];
+    pervs_ = new epoll_event[max_connections + 1];
 }
 
 
@@ -69,5 +70,7 @@ int EpollServer::Wait(int millsecond) {
     return epoll_wait(epoll_fd_, pervs_,
                       max_connections_ + 1, millsecond);
 }
+
+
 
 }   // namespace network.

@@ -150,32 +150,32 @@ network/client_socket.cc.s:
 	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/client_socket.cc.s
 .PHONY : network/client_socket.cc.s
 
-network/epool_server.o: network/epool_server.cc.o
+network/epoll_server.o: network/epoll_server.cc.o
 
-.PHONY : network/epool_server.o
+.PHONY : network/epoll_server.o
 
 # target to build an object file
-network/epool_server.cc.o:
-	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/epool_server.cc.o
-.PHONY : network/epool_server.cc.o
+network/epoll_server.cc.o:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o
+.PHONY : network/epoll_server.cc.o
 
-network/epool_server.i: network/epool_server.cc.i
+network/epoll_server.i: network/epoll_server.cc.i
 
-.PHONY : network/epool_server.i
+.PHONY : network/epoll_server.i
 
 # target to preprocess a source file
-network/epool_server.cc.i:
-	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/epool_server.cc.i
-.PHONY : network/epool_server.cc.i
+network/epoll_server.cc.i:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.i
+.PHONY : network/epoll_server.cc.i
 
-network/epool_server.s: network/epool_server.cc.s
+network/epoll_server.s: network/epoll_server.cc.s
 
-.PHONY : network/epool_server.s
+.PHONY : network/epoll_server.s
 
 # target to generate assembly for a file
-network/epool_server.cc.s:
-	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/epool_server.cc.s
-.PHONY : network/epool_server.cc.s
+network/epoll_server.cc.s:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.s
+.PHONY : network/epoll_server.cc.s
 
 network/server_socket.o: network/server_socket.cc.o
 
@@ -351,9 +351,9 @@ help:
 	@echo "... network/client_socket.o"
 	@echo "... network/client_socket.i"
 	@echo "... network/client_socket.s"
-	@echo "... network/epool_server.o"
-	@echo "... network/epool_server.i"
-	@echo "... network/epool_server.s"
+	@echo "... network/epoll_server.o"
+	@echo "... network/epoll_server.i"
+	@echo "... network/epoll_server.s"
 	@echo "... network/server_socket.o"
 	@echo "... network/server_socket.i"
 	@echo "... network/server_socket.s"
