@@ -60,20 +60,10 @@ void ServerSocket::Listen() {
     try {
         if (setsockopt(listen_fd_, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on)) < 0)
             throw mistake::socket_exception("setsockopt error");
-    } catch(...) {
-        close(listen_fd_);
-        throw ;
-    }
 
-    try {
         if (bind(listen_fd_, (sockaddr*)&serv_addr, sizeof(serv_addr)) < 0)
             throw mistake::socket_exception("bind error");
-    } catch(...) {
-        close(listen_fd_);
-        throw ;
-    }
 
-    try {
         if (listen(listen_fd_, kListenQ) < 0)
             throw mistake::socket_exception("listen_fd_");
     } catch(...) {
@@ -101,7 +91,7 @@ Socket ServerSocket::Accept() {
     return client_fd;
 }
 
-void ServerSocket::Recv(Socket connfd, char *buffer, size_t len) {
+ssize_t ServerSocket::Recv(Socket connfd, char *buffer, size_t len) {
     ssize_t ret = recv(connfd, buffer, len, 0);
     
     
@@ -111,13 +101,17 @@ void ServerSocket::Recv(Socket connfd, char *buffer, size_t len) {
     // 防止带进来的buffer没有清零.
     if (ret > 0)
         buffer[ret] = '\0';
+
+    return ret;
 }
 
-void ServerSocket::Send(Socket connfd, const char *buffer, size_t len) {
+ssize_t ServerSocket::Send(Socket connfd, const char *buffer, size_t len) {
     ssize_t ret = send(connfd, buffer, len, 0);
     
     if (ret != len)
         throw mistake::socket_exception(-2, "send error");
+
+    return ret;
 }
 
 

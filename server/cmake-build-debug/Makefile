@@ -204,33 +204,6 @@ network/client_socket.cc.s:
 	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/client_socket.cc.s
 .PHONY : network/client_socket.cc.s
 
-network/epoll_server.o: network/epoll_server.cc.o
-
-.PHONY : network/epoll_server.o
-
-# target to build an object file
-network/epoll_server.cc.o:
-	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o
-.PHONY : network/epoll_server.cc.o
-
-network/epoll_server.i: network/epoll_server.cc.i
-
-.PHONY : network/epoll_server.i
-
-# target to preprocess a source file
-network/epoll_server.cc.i:
-	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.i
-.PHONY : network/epoll_server.cc.i
-
-network/epoll_server.s: network/epoll_server.cc.s
-
-.PHONY : network/epoll_server.s
-
-# target to generate assembly for a file
-network/epoll_server.cc.s:
-	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.s
-.PHONY : network/epoll_server.cc.s
-
 network/server_socket.o: network/server_socket.cc.o
 
 .PHONY : network/server_socket.o
@@ -411,9 +384,6 @@ help:
 	@echo "... network/client_socket.o"
 	@echo "... network/client_socket.i"
 	@echo "... network/client_socket.s"
-	@echo "... network/epoll_server.o"
-	@echo "... network/epoll_server.i"
-	@echo "... network/epoll_server.s"
 	@echo "... network/server_socket.o"
 	@echo "... network/server_socket.i"
 	@echo "... network/server_socket.s"

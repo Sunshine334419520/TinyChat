@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/sunshine/Code/C++/TinyChat/server/message/global_constant.cc" "/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles/TinyChatServer.dir/message/global_constant.cc.o"
   "/Users/sunshine/Code/C++/TinyChat/server/message/message.cc" "/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles/TinyChatServer.dir/message/message.cc.o"
   "/Users/sunshine/Code/C++/TinyChat/server/network/client_socket.cc" "/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles/TinyChatServer.dir/network/client_socket.cc.o"
-  "/Users/sunshine/Code/C++/TinyChat/server/network/epoll_server.cc" "/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o"
   "/Users/sunshine/Code/C++/TinyChat/server/network/server_socket.cc" "/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles/TinyChatServer.dir/network/server_socket.cc.o"
   "/Users/sunshine/Code/C++/TinyChat/server/thread/lock.cc" "/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles/TinyChatServer.dir/thread/lock.cc.o"
   "/Users/sunshine/Code/C++/TinyChat/server/thread/thread.cc" "/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles/TinyChatServer.dir/thread/thread.cc.o"

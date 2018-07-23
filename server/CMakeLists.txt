@@ -3,6 +3,7 @@
 cmake_minimum_required(VERSION 2.6)
 cmake_policy(SET CMP0012 NEW)
 
+
 #项目名称
 project(TinyChatServer)
 
@@ -15,6 +16,8 @@ set(EXCEPTION_SRC exception/tiny_chat_exception.h
                   #exception/tiny_chat_exception.cc)
                     )
 
+
+
 set(THREAD_SRC  thread/thread.h
                 thread/thread.cc
                 thread/thread_pool.h
@@ -26,12 +29,34 @@ set(THREAD_SRC  thread/thread.h
                 thread/base_task.h 
                 )
 
-set(NETWORK_SRC network/server_socket.cc
-                network/server_socket.h
-                network/client_socket.cc
-                network/client_socket.h
-                network/epoll_server.cc
-                network/epoll_server.h)
+if (LINUX)
+    set(NETWORK_SRC network/server_socket.cc
+            network/server_socket.h
+            network/client_socket.cc
+            network/client_socket.h
+            network/epoll_server.cc
+            network/epoll_server.h)
+elseif(APPLE)
+    set(NETWORK_SRC network/server_socket.cc
+            network/server_socket.h
+            network/client_socket.cc
+            network/client_socket.h
+            )
+elseif(WIN32)
+    set(NETWORK_SRC #network/server_socket.cc
+            #network/server_socket.h
+            network/client_socket.cc
+            network/client_socket.h
+            )
+else()
+    set(NETWORK_SRC network/server_socket.cc
+            network/server_socket.h
+            network/client_socket.cc
+            network/client_socket.h
+            )
+endif ()
+
+
 
 set(MESSAGE_SRC message/message.h
                 message/message.cc
@@ -45,6 +70,10 @@ set(MAIN_SRC tiny_chat_main.cc)
 
 set(ALL_SRC ${EXCEPTION_SRC} ${THREAD_SRC} ${NETWORK_SRC}
             ${MACOR_SRC} ${MAIN_SRC} ${MESSAGE_SRC})
+
+if(LINUX)
+    target_link_libraries(${PROJECT_NAME} pthread)
+endif()
 
 
 #利用SRC生成一个可执行文件

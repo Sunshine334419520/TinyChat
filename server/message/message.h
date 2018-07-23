@@ -5,6 +5,8 @@
 #ifndef TINYCHATSERVER_MESSAGE_H
 #define TINYCHATSERVER_MESSAGE_H
 
+#include <cstring>
+
 #include "macor.h"
 #include "global_constant.h"
 
@@ -57,7 +59,7 @@ class Message {
 
         virtual void ReceiveMessage(const char*) = 0;
 
-        virtual void ProcessMessage() = 0;
+        virtual void ProcessMessage(bool is_off_line_msg) = 0;
 
      private:
         DISALLOW_COPY_AND_ASSIGN(Delegate);
@@ -85,7 +87,12 @@ class Message {
 template<class MessageStruct>
 void Message::SendMessage(network::Socket connfd,
                           const MessageStruct &send_info) {
+    char buf[constant::kNormalRecvBufLen];
+    memset(buf, 0, constant::kNormalRecvBufLen);
+    memcpy(buf, &send_info, sizeof(send_info));
 
+    #if defined(TINYCHAT_SERVER)
+    network::ServerSocket::Create()->Send(connfd, buf, sizeof(send_info));
 }
 
 

@@ -14,7 +14,14 @@ class MessageImpl : public Message {
  public:
     MessageImpl()
             : delegate_(nullptr),
-              is_receive_(false) {}
+              is_receive_(false),
+              is_off_line_msg_(false){
+        socket_ = network::ServerSocket::Create();
+    }
+
+    ~MessageImpl() {
+        DestroyDelegate();
+    }
 
 
     void SendMessage(network::Socket connfd) OVERRIDE {
@@ -29,10 +36,14 @@ class MessageImpl : public Message {
 
         socket_->Recv(connfd, buffer, constant::kNormalRecvBufLen);
 
-       if (!InitDelegate(static_cast<MessageStructBase*>(buffer)->type))
+        MessageStructBase* base_msg = static_cast<MessageStructBase*>(buffer);
+
+       if (!InitDelegate(base_msg->type))
            return ;
 
-       delegate_->ReceiveMessage(nullptr);
+       is_off_line_msg_ = CheckMessageStatus(base_msg->to);
+
+       delegate_->ReceiveMessage(buffer);
 
        is_receive_ = true;
     }
@@ -41,7 +52,7 @@ class MessageImpl : public Message {
         if (is_receive_)
             throw mistake::message_exception("not receive to the message");
 
-        delegate_->ProcessMessage();
+        delegate_->ProcessMessage(is_off_line_msg_);
     }
 
     void DestroyDelegate() noexcept OVERRIDE {
@@ -50,8 +61,10 @@ class MessageImpl : public Message {
     }
 
     bool is_receive() const { return is_receive_; }
+    bool is_off_line_msg() const { return is_off_line_msg_; }
 
  private:
+    // 根据消息类型初始化delegate
     bool InitDelegate(MsgType msg_type) {
         switch(msg_type) {
             case MsgType::IS_LOGIN:
@@ -98,8 +111,17 @@ class MessageImpl : public Message {
         return true;
     }
 
+    // 用来检查消息的状态，有两种状态，在线消息，和离线消息
+    // 在线消息 true，离线消息 false.
+    bool CheckMessageStatus(const char* to) {
+        #if defined(TINYCHAT_SERVER)
+        return true;
+        #endif
+    }
+
     Delegate* delegate_;         // 用来执行主要到工作
     bool is_receive_;           // true 表示接收到消息了
+    bool is_off_line_msg_;
 
     #if defined(TINYCHAT_SERVER)
     // 一个socket 环境，不要在这个类调用Destroy(), 不然会导致外面的socket 环境失效;

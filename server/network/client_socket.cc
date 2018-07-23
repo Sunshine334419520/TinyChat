@@ -89,13 +89,24 @@ void ClientSocket::Init() {
 #endif
 }
 
-void ClientSocket::Recv(Socket connfd, char *buffer, int len) {
 
+ssize_t ClientSocket::Recv(Socket connfd, char *buffer, size_t len) {
 
+    ssize_t ret = recv(connfd, buffer, len, 0);
+
+    if (ret < 0)
+        throw mistake::socket_exception(-1, "recv error");
+
+    return ret;
 }
 
-void ClientSocket::Send(Socket connfd, const char *buffer, int len) {
+ssize_t ClientSocket::Send(Socket connfd, const char *buffer, size_t len) {
+    ssize_t ret  = send(connfd, buffer, len, 0);
 
+    if (ret < 0)
+        throw mistake::socket_exception(-2, "recv error");
+
+    return ret;
 }
 
 

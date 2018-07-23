@@ -201,33 +201,9 @@ CMakeFiles/TinyChatServer.dir/network/client_socket.cc.o.provides: CMakeFiles/Ti
 CMakeFiles/TinyChatServer.dir/network/client_socket.cc.o.provides.build: CMakeFiles/TinyChatServer.dir/network/client_socket.cc.o
 
 
-CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o: CMakeFiles/TinyChatServer.dir/flags.make
-CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o: ../network/epoll_server.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o -c /Users/sunshine/Code/C++/TinyChat/server/network/epoll_server.cc
-
-CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/sunshine/Code/C++/TinyChat/server/network/epoll_server.cc > CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.i
-
-CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/sunshine/Code/C++/TinyChat/server/network/epoll_server.cc -o CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.s
-
-CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o.requires:
-
-.PHONY : CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o.requires
-
-CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o.provides: CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o.requires
-	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o.provides.build
-.PHONY : CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o.provides
-
-CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o.provides.build: CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o
-
-
 CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.o: CMakeFiles/TinyChatServer.dir/flags.make
 CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.o: ../tiny_chat_main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.o -c /Users/sunshine/Code/C++/TinyChat/server/tiny_chat_main.cc
 
 CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.i: cmake_force
@@ -251,7 +227,7 @@ CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.o.provides.build: CMakeFiles/Tin
 
 CMakeFiles/TinyChatServer.dir/message/message.cc.o: CMakeFiles/TinyChatServer.dir/flags.make
 CMakeFiles/TinyChatServer.dir/message/message.cc.o: ../message/message.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TinyChatServer.dir/message/message.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/TinyChatServer.dir/message/message.cc.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TinyChatServer.dir/message/message.cc.o -c /Users/sunshine/Code/C++/TinyChat/server/message/message.cc
 
 CMakeFiles/TinyChatServer.dir/message/message.cc.i: cmake_force
@@ -275,7 +251,7 @@ CMakeFiles/TinyChatServer.dir/message/message.cc.o.provides.build: CMakeFiles/Ti
 
 CMakeFiles/TinyChatServer.dir/message/global_constant.cc.o: CMakeFiles/TinyChatServer.dir/flags.make
 CMakeFiles/TinyChatServer.dir/message/global_constant.cc.o: ../message/global_constant.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/TinyChatServer.dir/message/global_constant.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/TinyChatServer.dir/message/global_constant.cc.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/TinyChatServer.dir/message/global_constant.cc.o -c /Users/sunshine/Code/C++/TinyChat/server/message/global_constant.cc
 
 CMakeFiles/TinyChatServer.dir/message/global_constant.cc.i: cmake_force
@@ -305,7 +281,6 @@ TinyChatServer_OBJECTS = \
 "CMakeFiles/TinyChatServer.dir/thread/tiny_chat_thread.cc.o" \
 "CMakeFiles/TinyChatServer.dir/network/server_socket.cc.o" \
 "CMakeFiles/TinyChatServer.dir/network/client_socket.cc.o" \
-"CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o" \
 "CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.o" \
 "CMakeFiles/TinyChatServer.dir/message/message.cc.o" \
 "CMakeFiles/TinyChatServer.dir/message/global_constant.cc.o"
@@ -319,13 +294,12 @@ TinyChatServer: CMakeFiles/TinyChatServer.dir/thread/lock.cc.o
 TinyChatServer: CMakeFiles/TinyChatServer.dir/thread/tiny_chat_thread.cc.o
 TinyChatServer: CMakeFiles/TinyChatServer.dir/network/server_socket.cc.o
 TinyChatServer: CMakeFiles/TinyChatServer.dir/network/client_socket.cc.o
-TinyChatServer: CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o
 TinyChatServer: CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.o
 TinyChatServer: CMakeFiles/TinyChatServer.dir/message/message.cc.o
 TinyChatServer: CMakeFiles/TinyChatServer.dir/message/global_constant.cc.o
 TinyChatServer: CMakeFiles/TinyChatServer.dir/build.make
 TinyChatServer: CMakeFiles/TinyChatServer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable TinyChatServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable TinyChatServer"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/TinyChatServer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -339,7 +313,6 @@ CMakeFiles/TinyChatServer.dir/requires: CMakeFiles/TinyChatServer.dir/thread/loc
 CMakeFiles/TinyChatServer.dir/requires: CMakeFiles/TinyChatServer.dir/thread/tiny_chat_thread.cc.o.requires
 CMakeFiles/TinyChatServer.dir/requires: CMakeFiles/TinyChatServer.dir/network/server_socket.cc.o.requires
 CMakeFiles/TinyChatServer.dir/requires: CMakeFiles/TinyChatServer.dir/network/client_socket.cc.o.requires
-CMakeFiles/TinyChatServer.dir/requires: CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o.requires
 CMakeFiles/TinyChatServer.dir/requires: CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.o.requires
 CMakeFiles/TinyChatServer.dir/requires: CMakeFiles/TinyChatServer.dir/message/message.cc.o.requires
 CMakeFiles/TinyChatServer.dir/requires: CMakeFiles/TinyChatServer.dir/message/global_constant.cc.o.requires

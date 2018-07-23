@@ -70,8 +70,8 @@ class ServerSocket final {
     Socket Accept();
 
     // 这只是一个不同的发送与接收函数. 发送大数据时需要进行额外的处理
-    void Recv(Socket connfd, char* buffer, size_t len);
-    void Send(Socket connfd, const char* buffer, size_t len);
+    ssize_t Recv(Socket connfd, char* buffer, size_t len);
+    ssize_t Send(Socket connfd, const char* buffer, size_t len);
 
     // 必须用这个函数
     void Destroy() noexcept;

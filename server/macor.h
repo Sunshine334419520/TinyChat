@@ -90,9 +90,13 @@
 
 #endif
 
-#define ONLYALLOW_HEAP_ALLOC(Class_Name)          \
- protected:
+#if !defined(ONLYALLOW_HEAP_ALLOC)
+
+#define ONLYALLOW_HEAP_ALLOC(Class_Name)        \
+ protected:             \
   virtual ~Class_Name() {}
+
+#endif
 
 
 
