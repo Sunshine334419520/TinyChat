@@ -123,6 +123,60 @@ TinyChatServer/fast:
 	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/build
 .PHONY : TinyChatServer/fast
 
+message/global_constant.o: message/global_constant.cc.o
+
+.PHONY : message/global_constant.o
+
+# target to build an object file
+message/global_constant.cc.o:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/message/global_constant.cc.o
+.PHONY : message/global_constant.cc.o
+
+message/global_constant.i: message/global_constant.cc.i
+
+.PHONY : message/global_constant.i
+
+# target to preprocess a source file
+message/global_constant.cc.i:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/message/global_constant.cc.i
+.PHONY : message/global_constant.cc.i
+
+message/global_constant.s: message/global_constant.cc.s
+
+.PHONY : message/global_constant.s
+
+# target to generate assembly for a file
+message/global_constant.cc.s:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/message/global_constant.cc.s
+.PHONY : message/global_constant.cc.s
+
+message/message.o: message/message.cc.o
+
+.PHONY : message/message.o
+
+# target to build an object file
+message/message.cc.o:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/message/message.cc.o
+.PHONY : message/message.cc.o
+
+message/message.i: message/message.cc.i
+
+.PHONY : message/message.i
+
+# target to preprocess a source file
+message/message.cc.i:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/message/message.cc.i
+.PHONY : message/message.cc.i
+
+message/message.s: message/message.cc.s
+
+.PHONY : message/message.s
+
+# target to generate assembly for a file
+message/message.cc.s:
+	$(MAKE) -f CMakeFiles/TinyChatServer.dir/build.make CMakeFiles/TinyChatServer.dir/message/message.cc.s
+.PHONY : message/message.cc.s
+
 network/client_socket.o: network/client_socket.cc.o
 
 .PHONY : network/client_socket.o
@@ -348,6 +402,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... TinyChatServer"
+	@echo "... message/global_constant.o"
+	@echo "... message/global_constant.i"
+	@echo "... message/global_constant.s"
+	@echo "... message/message.o"
+	@echo "... message/message.i"
+	@echo "... message/message.s"
 	@echo "... network/client_socket.o"
 	@echo "... network/client_socket.i"
 	@echo "... network/client_socket.s"

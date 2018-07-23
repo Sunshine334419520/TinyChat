@@ -5,6 +5,13 @@
 #ifndef TINYCHATSERVER_MACOR_H
 #define TINYCHATSERVER_MACOR_H
 
+
+// 所在环境
+#if !defined(TINYCHAT_SERVER)
+
+#define TINYCHAT_SERVER 1
+#endif
+
 // 各个平台宏定义
 
 #if defined(__native_client__)
@@ -17,9 +24,9 @@
 #elif defined(_WIN32)
 #define OS_WIN 1
 #elif defined(__FreeBSD__)
-#define OS_FREEBSD
+#define OS_FREEBSD 1
 #elif defined(__OpenBSD__)
-#define OS_OPENBSD
+#define OS_OPENBSD 1
 
 #endif
 

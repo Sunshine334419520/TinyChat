@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/TinyChatServer.dir/network/client_socket.cc.o"
   "CMakeFiles/TinyChatServer.dir/network/epoll_server.cc.o"
   "CMakeFiles/TinyChatServer.dir/tiny_chat_main.cc.o"
+  "CMakeFiles/TinyChatServer.dir/message/message.cc.o"
+  "CMakeFiles/TinyChatServer.dir/message/global_constant.cc.o"
   "TinyChatServer.pdb"
   "TinyChatServer"
 )

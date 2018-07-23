@@ -90,6 +90,15 @@
 		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/macor.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/message/global_constant.cc">
+			<Option target="TinyChatServer"/>
+		</Unit>
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/message/global_constant.h">
+			<Option target="TinyChatServer"/>
+		</Unit>
+		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/message/message.cc">
+			<Option target="TinyChatServer"/>
+		</Unit>
 		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/message/message.h">
 			<Option target="TinyChatServer"/>
 		</Unit>

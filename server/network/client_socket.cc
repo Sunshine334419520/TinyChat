@@ -7,6 +7,7 @@
 
 #include <cassert>
 
+
 #include "exception/tiny_chat_exception.h"
 
 
@@ -69,6 +70,8 @@ void ClientSocket::Destroy() noexcept {
 #endif
     }
 
+    delete g_ClientInstance;
+    g_ClientInstance = nullptr;
 }
 
 void ClientSocket::Init() {
@@ -84,6 +87,15 @@ void ClientSocket::Init() {
         throw ;
     }
 #endif
+}
+
+void ClientSocket::Recv(Socket connfd, char *buffer, int len) {
+
+
+}
+
+void ClientSocket::Send(Socket connfd, const char *buffer, int len) {
+
 }
 
 

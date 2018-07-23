@@ -1,6 +1,7 @@
 #include "network/server_socket.h"
 
 #include <cassert>
+#include <errno.h>
 
 
 #include "exception/tiny_chat_exception.h"
@@ -40,6 +41,7 @@ void ServerSocket::Destroy() noexcept {
     }
 
     delete g_ServInstance;
+    g_ServInstance = nullptr;
 }
 
 void ServerSocket::Listen() {
@@ -99,6 +101,24 @@ Socket ServerSocket::Accept() {
     return client_fd;
 }
 
+void ServerSocket::Recv(Socket connfd, char *buffer, size_t len) {
+    ssize_t ret = recv(connfd, buffer, len, 0);
+    
+    
+    if((ret<0) && !(errno == EAGAIN||errno == EWOULDBLOCK||errno == EINTR))
+        throw mistake::socket_exception(-1, "recv error");
+    
+    // 防止带进来的buffer没有清零.
+    if (ret > 0)
+        buffer[ret] = '\0';
+}
+
+void ServerSocket::Send(Socket connfd, const char *buffer, size_t len) {
+    ssize_t ret = send(connfd, buffer, len, 0);
+    
+    if (ret != len)
+        throw mistake::socket_exception(-2, "send error");
+}
 
 
 }   // namespace network

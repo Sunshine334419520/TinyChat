@@ -26,16 +26,40 @@ class terminate_exception : std::exception {
 
 class socket_exception : std::exception {
  public:
-    socket_exception(const std::string& str) const noexcept {
-        error_str_ = str;
+    explicit socket_exception(const std::string& str) const noexcept
+        : error_code_(0), error_str_(str){
     }
+
+    explicit socket_exception(int error_code) const noexcept
+        : error_code_(error_code), error_str_("socket error"){
+    }
+
+    socket_exception(int error_code, const std::string& str) const noexcept
+        : error_code_(error_code), error_str_(str) {}
+
+    const char *what() const noexcept {
+        return error_str_.c_str();
+    }
+
+    int error_code() const { return error_code_; }
+
+ private:
+   int error_code_;
+   std::string error_str_;
+};
+
+
+class message_exception : std::exception {
+ public:
+    explicit message_exception(const std::string& str) const noexcept
+        : error_str_(str) {}
 
     const char *what() const noexcept {
         return error_str_.c_str();
     }
 
  private:
-   std::string error_str_;
+    std::string error_str_;
 };
 
 }   // namespace mistake

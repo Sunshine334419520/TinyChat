@@ -49,6 +49,9 @@ class ClientSocket final {
 
     void Connect();
 
+    void Recv(Socket connfd, char* buffer, size_t len);
+    void Send(Socket connfd, const char* buffer, size_t len);
+
     void Destroy() noexcept;
 
  private:

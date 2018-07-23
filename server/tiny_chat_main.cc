@@ -6,11 +6,6 @@
 #include "thread/thread_pool.h"
 #include "thread/base_task.h"
 
-class TestTo : public TestOne {
-
-};
-
- */
 
 
 int main(int argc, char* argv[]) {
