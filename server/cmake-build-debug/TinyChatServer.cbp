@@ -4,147 +4,147 @@
 	<Project>
 		<Option title="TinyChatServer"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="clang"/>
+		<Option compiler="msvc8"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug"/>
+				<Option working_dir="D:/Code/C++/TinyChat/server/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TinyChatServer">
-				<Option output="/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/TinyChatServer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug"/>
+				<Option output="D:/Code/C++/TinyChat/server/cmake-build-debug/TinyChatServer.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Code/C++/TinyChat/server/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="clang"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/Users/sunshine/Code/C++/TinyChat/server/../server"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Code/C++/TinyChat/server/../server"/>
+					<Add directory="D:\Visual Studio 2015\VC\INCLUDE"/>
+					<Add directory="D:\Visual Studio 2015\VC\ATLMFC\INCLUDE"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\8.1\include\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\8.1\include\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\8.1\include\\winrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 TinyChatServer"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 TinyChatServer"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="TinyChatServer/fast">
-				<Option output="/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/TinyChatServer" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug"/>
+				<Option output="D:/Code/C++/TinyChat/server/cmake-build-debug/TinyChatServer.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Code/C++/TinyChat/server/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="clang"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/Users/sunshine/Code/C++/TinyChat/server/../server"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
-					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="D:/Code/C++/TinyChat/server/../server"/>
+					<Add directory="D:\Visual Studio 2015\VC\INCLUDE"/>
+					<Add directory="D:\Visual Studio 2015\VC\ATLMFC\INCLUDE"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.10240.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\8.1\include\\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\8.1\include\\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\8.1\include\\winrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 TinyChatServer/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 TinyChatServer/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/Code/C++/TinyChat/server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/Code/C++/TinyChat/server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Code\C++\TinyChat\server\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/exception/tiny_chat_exception.h">
+		<Unit filename="D:/Code/C++/TinyChat/server/context/main_context.cc">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/macor.h">
+		<Unit filename="D:/Code/C++/TinyChat/server/context/main_context.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/message/global_constant.cc">
+		<Unit filename="D:/Code/C++/TinyChat/server/exception/tiny_chat_exception.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/message/global_constant.h">
+		<Unit filename="D:/Code/C++/TinyChat/server/macor.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/message/message.cc">
+		<Unit filename="D:/Code/C++/TinyChat/server/message/global_constant.cc">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/message/message.h">
+		<Unit filename="D:/Code/C++/TinyChat/server/message/global_constant.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/client_socket.cc">
+		<Unit filename="D:/Code/C++/TinyChat/server/message/message.cc">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/client_socket.h">
+		<Unit filename="D:/Code/C++/TinyChat/server/message/message.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/server_socket.cc">
+		<Unit filename="D:/Code/C++/TinyChat/server/network/client_socket.cc">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/network/server_socket.h">
+		<Unit filename="D:/Code/C++/TinyChat/server/network/client_socket.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/thread/base_task.h">
+		<Unit filename="D:/Code/C++/TinyChat/server/thread/base_task.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/thread/lock.cc">
+		<Unit filename="D:/Code/C++/TinyChat/server/thread/lock.cc">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/thread/lock.h">
+		<Unit filename="D:/Code/C++/TinyChat/server/thread/lock.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/thread/thread.cc">
+		<Unit filename="D:/Code/C++/TinyChat/server/thread/thread.cc">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/thread/thread.h">
+		<Unit filename="D:/Code/C++/TinyChat/server/thread/thread.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/thread/thread_pool.cc">
+		<Unit filename="D:/Code/C++/TinyChat/server/thread/thread_pool.cc">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/thread/thread_pool.h">
+		<Unit filename="D:/Code/C++/TinyChat/server/thread/thread_pool.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/thread/tiny_chat_thread.cc">
+		<Unit filename="D:/Code/C++/TinyChat/server/thread/tiny_chat_thread.cc">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/thread/tiny_chat_thread.h">
+		<Unit filename="D:/Code/C++/TinyChat/server/thread/tiny_chat_thread.h">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/tiny_chat_main.cc">
+		<Unit filename="D:/Code/C++/TinyChat/server/tiny_chat_main.cc">
 			<Option target="TinyChatServer"/>
 		</Unit>
-		<Unit filename="/Users/sunshine/Code/C++/TinyChat/server/CMakeLists.txt">
+		<Unit filename="D:/Code/C++/TinyChat/server/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

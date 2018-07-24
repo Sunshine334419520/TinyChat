@@ -1,4 +1,4 @@
-/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/sunshine/Code/C++/TinyChat/server
+"D:\Clion\CLion 2018.1.6\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" D:\Code\C++\TinyChat\server
 -- Configuring done
 -- Generating done
--- Build files have been written to: /Users/sunshine/Code/C++/TinyChat/server/cmake-build-debug
+-- Build files have been written to: D:/Code/C++/TinyChat/server/cmake-build-debug

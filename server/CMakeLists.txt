@@ -63,13 +63,16 @@ set(MESSAGE_SRC message/message.h
                 message/global_constant.h
                 message/global_constant.cc)
 
+set(CONTEXT_SRC context/main_context.cc
+                context/main_context.h)
+
 set(MACOR_SRC macor.h)
 
 set(MAIN_SRC tiny_chat_main.cc)
 
 
 set(ALL_SRC ${EXCEPTION_SRC} ${THREAD_SRC} ${NETWORK_SRC}
-            ${MACOR_SRC} ${MAIN_SRC} ${MESSAGE_SRC})
+            ${MACOR_SRC} ${MAIN_SRC} ${MESSAGE_SRC} ${CONTEXT_SRC})
 
 if(LINUX)
     target_link_libraries(${PROJECT_NAME} pthread)

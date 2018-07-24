@@ -3,25 +3,19 @@
 //
 #include <iostream>
 
-#include "thread/thread_pool.h"
-#include "thread/base_task.h"
-
+#include "context/main_context.h"
 
 
 int main(int argc, char* argv[]) {
 
-    thread::ThreadInfo info;
+    context::MainContext* main_context =
+            context::MainContext::Create();
 
-    for (int i = 0; i < 100; i++) {
-        info.name = i;
-        info.id = thread::TinyChatThread::ThreadID::CLIENT_CONNECT_THREAD;
-        thread::DefaultThreadPool::AllocateOneThread(info,
-                                                     std::make_shared<thread::XTask>(),
-                                                     nullptr);
+    main_context->Initialize();
 
-    }
+    main_context->Run();
 
-
+    main_context->Shutdown();
 
     return 0;
 

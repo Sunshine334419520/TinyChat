@@ -57,4 +57,24 @@ bool ConditionVariable::Signal() {
 bool ConditionVariable::BroadCast() {
     return pthread_cond_broadcast(&cond_);
 }
+
+RWLock::RWLock() {
+    pthread_rwlock_init(&rw_lock_, nullptr);
+}
+
+RWLock::~RWLock() {
+    pthread_rwlock_destroy(&rw_lock_);
+}
+
+bool RWLock::ReadLock() {
+    return pthread_rwlock_rdlock(&rw_lock_) == 0;
+}
+
+bool RWLock::WriteLock() {
+    return pthread_rwlock_wrlock(&rw_lock_) == 0;
+}
+
+bool RWLock::RWUnLock() {
+    return pthread_rwlock_unlock(&rw_lock_) == 0;
+}
 }   // namespace lock

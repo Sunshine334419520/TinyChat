@@ -36,7 +36,7 @@ class TinyChatThread : public Thread{
     explicit TinyChatThread(const std::string& name,
                             ThreadID id = DEFAULT_THREAD);
 
-    explicit TinyChatThread(const std::string& name,
+    TinyChatThread(const std::string& name,
                             std::shared_ptr<BaseTask> task,
                             std::shared_ptr<void> task_data,
                             ThreadID id = DEFAULT_THREAD);

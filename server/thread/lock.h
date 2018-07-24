@@ -7,6 +7,8 @@
 
 #include <pthread.h>
 
+
+
 namespace lock {
 
 // mutex loacker
@@ -21,6 +23,7 @@ class Mutex final {
     pthread_mutex_t mutex_;
 };
 
+// 条件变量
 class ConditionVariable final {
  public:
     ConditionVariable();
@@ -36,6 +39,21 @@ class ConditionVariable final {
  private:
     pthread_mutex_t mutex_;
     pthread_cond_t cond_;
+};
+
+// 读写锁
+class RWLock final {
+ public:
+    RWLock();
+    ~RWLock();
+
+    bool ReadLock();
+    bool WriteLock();
+
+    bool RWUnLock();
+
+ private:
+    pthread_rwlock_t rw_lock_;
 };
 
 }
